@@ -3,8 +3,9 @@ require:
   - rubocop-rails
 
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3.0
   DisabledByDefault: true
+  NewCops: disable
   Exclude:
     - "**/node_modules/**/*"
     - "**/spec/**/*"
@@ -71,7 +72,7 @@ Layout/EmptyLinesAroundMethodBody:
 Layout/EmptyLinesAroundModuleBody:
   Enabled: true
 
-Layout/IndentFirstArgument:
+Layout/FirstArgumentIndentation:
   Enabled: true
 
 Layout/IndentationConsistency:
@@ -128,11 +129,11 @@ Layout/SpaceInsideParens:
   Enabled: true
 
 # Detect hard tabs, no hard tabs.
-Layout/Tab:
+Layout/IndentationStyle:
   Enabled: true
 
 # Blank lines should not have any spaces.
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   Enabled: true
 
 # No trailing whitespace.
@@ -142,10 +143,16 @@ Layout/TrailingWhitespace:
 Naming/PredicateName:
   Enabled: false
 
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   Enabled: false
 
 Performance/RedundantBlockCall:
+  Enabled: false
+
+Rails/ApplicationController:
+  Enabled: false
+
+Rails/ApplicationMailer:
   Enabled: false
 
 Rails/ApplicationRecord:
@@ -159,20 +166,17 @@ Rails/LexicallyScopedActionFilter:
 
 Rails/Output:
   Enabled: false
-  
+
+Rails/RakeEnvironment:
+  Enabled: false
+
 Rails/SkipsModelValidations:
   Enabled: true
-  Whitelist: [update_all]
+  AllowedMethods: [update_all]
 
 # Prefer &&/|| over and/or.
 Style/AndOr:
   Enabled: true
-
-# Do not use braces for hash literals when they are the last argument of a
-# method call.
-Style/BracesAroundHashParameters:
-  Enabled: true
-  EnforcedStyle: context_dependent
 
 # Prefer Foo.method over Foo::method
 Style/ColonMethodCall:
@@ -205,6 +209,10 @@ Style/RedundantBegin:
 Style/RedundantFreeze:
   Enabled: true
 
+# Use quotes for string literals when they are enough.
+Style/RedundantPercentQ:
+  Enabled: true
+
 Style/RedundantReturn:
   Enabled: true
   AllowMultipleReturnValues: true
@@ -218,8 +226,4 @@ Style/StringLiterals:
   EnforcedStyle: double_quotes
 
 Style/TrivialAccessors:
-  Enabled: true
-
-# Use quotes for string literals when they are enough.
-Style/UnneededPercentQ:
   Enabled: true
