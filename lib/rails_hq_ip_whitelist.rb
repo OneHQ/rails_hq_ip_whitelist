@@ -29,6 +29,7 @@ module IPWhitelist
       if config.redirect.is_a?(Proc)
         redirect_proc = T.cast(config.redirect, Proc)
         redirect = T.cast(redirect_proc.call, String)
+
         T.assert_type!(redirect, String)
       else
         T.cast(config.redirect, T.nilable(String))

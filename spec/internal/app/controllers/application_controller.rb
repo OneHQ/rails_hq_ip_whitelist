@@ -1,4 +1,5 @@
 require "rails_hq_ip_whitelist"
+
 class ApplicationController < ActionController::Base
   include IPWhitelist::Controller
   layout false
