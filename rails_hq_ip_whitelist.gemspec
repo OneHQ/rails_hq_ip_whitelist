@@ -7,16 +7,16 @@ require "ip_whitelist/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "rails_hq_ip_whitelist"
-  s.version     = IPWhitelist::VERSION
-  s.authors     = ["Brendan Carney"]
-  s.email       = ["brendan@onehq.com"]
-  s.homepage    = "https://github.com/onehq/rails_hq_ip_whitelist"
-  s.summary     = "Whitelist IP Addresses"
-  s.description = "Whitelist IP Addresses"
-  s.license     = "MIT"
-
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.name                  = "rails_hq_ip_whitelist"
+  s.version               = IPWhitelist::VERSION
+  s.required_ruby_version = ">= 3.0.0"
+  s.authors               = ["Brendan Carney"]
+  s.email                 = ["brendan@onehq.com"]
+  s.homepage              = "https://github.com/onehq/rails_hq_ip_whitelist"
+  s.summary               = "Whitelist IP Addresses"
+  s.description           = "Whitelist IP Addresses"
+  s.license               = "MIT"
+  s.files                 = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails",                              "~> 6.1"
   s.add_dependency "sorbet-runtime",                     "~> 0.0"

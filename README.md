@@ -23,10 +23,8 @@ $ gem install ip_list
 
 ## Testing
 
-`
-Create your database.yml in spec/internal/config directory
-Create these folders assets/config and this file manifest.js in the spec/internal/app directory if they do not exist
-`
+1. Create your database.yml in spec/internal/config directory
+2. Create these folders assets/config and this file manifest.js in the spec/internal/app directory if they do not exist
 
 ## Test database setup
 ```
